@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>jQuery Functions</title>
+    <meta name="description" content="jQuery">
+    <link rel="stylesheet" type="text/css" href="jQueryStyle.css">
+    <script type ="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+
+        alert("jQuery successfully loaded!");
+        $('.button1').click(function(){
+          $("#addClass").addClass("selected");
+        });
+        $('.button2').click(function(){
+          $("#photo").slideToggle();
+        });
+        $('.SlideUp').click(function(){
+          $('.slider').slideUp();
+        });
+        $('.SlideDown').click(function(){
+          $('#photo1').slideDown();
+        });
+        $('.show').click(function(){
+          $('.magic').show();
+        });
+        $('.hide').click(function(){
+          $('.magic').hide();
+        });
+        $('#addition').append('<strong> This sentence is appended.</strong>');
+        $('#photo1').hide();
+        $('.fadein').click(function(){
+          $('.fader').fadeIn();
+        });
+        $('.fadeout').click(function() {
+          $('.fader').fadeOut();
+        });
+        $('.toggleButton').click(function(){
+          $('.toggle').toggle();
+        });
+        $('.html').html("This has been added with <b>jQuery</b>");
+        $('#addClass').before("This should appear before addClass");
+        $('#addClass').after("This should appear after the addClass");
+        var title = $('em').attr('title');
+        $('h3').text(title);
+        $('.baseball').data("team", {first: "Chicago", last: "Cubs"});
+        $('span:first').text($('.baseball').data("team").first);
+        $('span:last').text($('.baseball').data("team").last);
+        $('input').keyup(function(){
+          var value = $(this).val();
+          $('#reading').text(value);
+        }).keyup();
+      });
+    </script>
+    <style>
+      div{
+        width:600px;
+        height: 200px;
+        display: inline-block;
+      }
+      .selected{
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <button class="button1">AddClass</button>
+      <h2>AddClass</h2>
+      <p id="addClass">Click the button to add class 'red' to this paragraph</p>
+    </div>
+    <div>
+      <p class='magic'>Hide this text and show it again</p>
+      <button class="hide">Hide the text</button>
+      <button class="show">Show the text</buttton>
+    </div>
+    <div>
+      <button class="button2">Slidetoggle</button>
+      <h2>Slidetoggle</h2>
+      <p>Click the button to slidetoggle a hidden image</p>
+      <img id="photo" src="../../modernize/portfolio4.png" width="200" height="200">
+    </div>
+    <div>
+      <h2>Append</h2>
+      <p id="addition">Click the button to append a new paragraph!</p>
+    </div>
+    <div>
+      <div class="seperate">
+        <h2 class='slider'>This is toggle practice</p>
+      </div>
+      <button class="SlideUp">Slide Up</button>
+      <button class="SlideDown">Slide Down</button>
+    </div>
+    <img id="photo1" src="../../modernize/portfolio2.png" width="200" height="200">
+    <div>
+      <p class="fader">American Dad!</p>
+      <button class="fadein">Fade in the text</button>
+      <button class="fadeout">Fade out the text</button>
+    </div>
+    <div>
+      <p class="toggle">Toggle practice</p>
+      <p class="toggle" style="display:none">Toggled!</p>
+      <button class="toggleButton">Toggle Me!</button>
+    </div>
+    <div class="html">
+    </div>
+    <div>
+      <h5>Once there was a <em title="massive, scary"> devious T-rex</em>.</h5>
+      Synonyms for the T-rex could be: <h3></h3>
+    </div>
+    <div class="baseball">
+      The <span></span> <span></span> are going to win the World Series again!
+    </div>
+    <input type="text" value="Enter text here">
+    <p id="reading"></p>
+  </body>
+</html>

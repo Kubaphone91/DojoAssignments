@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>GitHub Contact Card</title>
+    <style media='screen'>
+
+    </style>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('form[class=brt]').submit(function(e){
+          e.preventDefault();
+          var newUser ={};
+          newUser.first = $('input[name=first]').val();
+          $('input[name=first]').val('');
+          newUser.last = $('input[name=last]').val();
+          $('input[name=last]').val('');
+          newUser.desc = $('textarea').val();
+          $('textarea').val('');
+          createCard(newUser)
+        });
+
+        $(document).on('click','.contact-card h3+p', function(){
+          $(this).toggle();
+          $(this).next().toggle();
+        })
+
+        function createCard(object){
+          var newCard ='<div class ="contact-card"><h3>' + object.first + ' ' + object.last + '</h3><p>Click here for description</p><p style="display:none">' + object.desc + '</p></div>';
+          console.log(newCard);
+          $('#description_area').prepend(newCard);
+        }
+
+        $('form[class=trb]').submit(function(e) {
+          e.preventDefault();
+          var gitUserName = $('input[name=gitUser]').val();
+          var gitUrl = 'https://api.github.com/users/';
+          $.get(gitUrl + gitUserName, function(results){
+            console.log(results);
+            var newPerson ={};
+            newPerson.first = results.name.split(' ')[0];
+            newPerson.last = results.name.split(' ')[1];
+            newPerson.desc = results.bio;
+            createCard(newPerson);
+          },'json');
+        })
+      });
+    </script>
+  </head>
+  <body>
+    <div id="wrapper">
+      <form class="brt" action="" method="post">
+        <label for="first">First Name:</label>
+        <input type="text" name="first" placeholder="First Name">
+        <label for="">Last Name:</label>
+        <input type="text" name="last" placeholder="Last Name">
+        <label for="description">Description:</label>
+        <textarea name="description" placeholder="Describe yourself"></textarea>
+        <input type="submit" name="" value="Add User">
+      </form>
+      <div id="description_area">
+      </div>
+      <form class="trb" action="" method="post">
+        <input type="text" name="gitUser" value="">
+        <input type="submit" name="" value="git the User">
+      </form>
+    </div>
+  </body>
+</html>

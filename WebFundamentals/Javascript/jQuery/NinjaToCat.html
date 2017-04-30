@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Ninja to Cat</title>
+    <script type ="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('#photo1').click(function(){
+          $(this).find('img').toggle();
+      });
+      $('#photo2').click(function(){
+        $(this).find('img').toggle();
+      });
+      $('#photo3').click(function(){
+        $(this).find('img').toggle();
+      });
+      $('#photo4').click(function(){
+        $(this).find('img').toggle();
+      });
+      $('#photo5').click(function(){
+        $(this).find('img').toggle();
+      });
+    })
+    </script>
+    <style>
+      #wrapper{
+        height: 600px;
+        width: 800px;
+      }
+      img{
+        height: 100px;
+        width: 200px;
+        border: 2px solid black;
+        margin-bottom: 2px;
+      }
+      h1{
+        font-family: sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrapper">
+      <h1>Ninja to Cat</h1>
+      <div id="photo1">
+        <img src="../../ninja-cat/img/cat0.png">
+        <img src="../../ninja-cat/img/ninja0.png" style="display:none;">
+      </div>
+      <div id="photo2">
+        <img src="../../ninja-cat/img/cat1.png">
+        <img src="../../ninja-cat/img/ninja1.png" style="display:none">
+      </div>
+      <div id="photo3">
+        <img src="../../ninja-cat/img/cat2.png">
+        <img src="../../ninja-cat/img/ninja2.png" style="display:none">
+      </div>
+      <div id="photo4">
+        <img src="../../ninja-cat/img/cat3.png">
+        <img src="../../ninja-cat/img/ninja3.png" style="display:none">
+      </div>
+      <div id="photo5">
+        <img src="../../ninja-cat/img/cat4.png">
+        <img src="../../ninja-cat/img/ninja4.png" style="display:none">
+      </div>
+    </div>
+  </body>
+</html>
