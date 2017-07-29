@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Index Page</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+  </head>
+  <body>
+    <div class="main">
+      <h1>Submit your Information!</h1>
+      <form action="/results" method="post">
+        <span>Name: </span><input type="text" name="name"><br>
+        <span>Dojo Location: </span><select name="location">
+          <option value="Seattle">Seattle</option>
+          <option value="Los Angeles">Los Angeles</option>
+          <option value="Silicon Valley">Silicon Valley</option>
+          <option value="Washington D.C.">Washington D.C.</option>
+          <option value="Dallas">Dallas</option>
+          <option value="Chicago">Chicago</option>
+          <option value="Online">Online</option>
+        </select><br>
+        <span>Favorite Language: </span><select name="language">
+          <option value=".NET/C#">.NET/C#</option>
+          <option value="MEAN">MEAN</option>
+          <option value="Ruby on Rails">Ruby on Rails</option>
+          <option value="Javascript">Javascript</option>
+          <option value="Python">Python</option>
+          <option value="C/C++">C/C++</option>
+        </select><br>
+        <span>Comment (optional): </span><br><textarea name="comments" rows="4" cols="30"></textarea><br>
+        <button type="submit" name="button">Submit Info</button>
+      </form>
+    </div>
+  </body>
+</html>

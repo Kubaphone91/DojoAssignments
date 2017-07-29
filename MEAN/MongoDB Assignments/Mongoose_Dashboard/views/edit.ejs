@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Edit Penguin</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+  </head>
+  <body>
+    <div class="main">
+      <h1>Welcome to the Penguin Dashboard</h1>
+      <img src="img/<%= rand %>.jpg">
+    </div>
+    <div class="edit_form">
+      <form action="/penguins/<%= penguin.id %>" method="post">
+        <h3>Update this Penguin</h3>
+        Name: <br><input type="text" name="name" value="<%= penguin.name %>"><br>
+        Type: <br><select name="type" value="<%= penguin.type %>">
+          <option>Emperor</option>
+          <option>King</option>
+          <option>Little</option>
+          <option>Crested</option>
+          <option>African</option>
+        </select><br>
+        Age: <br><input type="text" name="age" value="<%= penguin.age %>"><br>
+        Food: <br><input type="text" name="food" value="<%= penguin.food %>"><br>
+        <input type="submit" name="" value="Update">
+        <br> --or-- <br>
+        <input type="submit" formaction="/penguins/destroy/<%= penguin.id %>" value="Delete this Penguin">
+        <br> --or-- <br>
+        <input type="submit" formaction="/penguins/new" formmethod="get" value="Add a new Penguin">
+      </form>
+    </div>
+    <div class="return">
+      <a href="/">Return to Home Page</a>
+    </div>
+  </body>
+</html>

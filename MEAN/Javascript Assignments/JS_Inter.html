@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script type="text/javascript">
+    //Part 1
+    //Create a function called star_string() that takes a number and returns a string of that many *.
+    function star_string(number){
+      stars = ''                          //Empty string to populate
+      for(let i = 0; i < number; i++){    //For loop to insert the desired number of stars
+        stars += '*';                     //Adds stars to previous string created
+      }
+      console.log(stars);                 //Prints stars to console
+    }
+    star_string(8);                       //Runs star_string function
+
+    //Part 2
+    //Create a function called draw_stars() that takes an array of numbers and prints out *.
+    function draw_stars(arr){
+      for(let i = 0; i < arr.length; i++){  //Iterates through length of array
+        star_string(arr[i]);                //Calls star_string function to print the number of stars in each element
+      }
+    }
+    draw_stars([3,8,5,2]);                  //Runs draw_stars function
+
+    //Part 3
+    //Modify the function above. Allow an array containing integers and strings to be passed to the draw_stars() function.
+    //When a string is passed, instead of displaying *, display the first letter of the string according to the example below. You may use the .lower() string method for this part.
+    function draw_stars2(arr){
+      for(let i = 0; i < arr.length; i++){
+        if(typeof arr[i] == 'string'){
+          let letters = '';
+          for(let j = 0; j < arr[i].length; j++){
+            letters += arr[i][0];
+          }
+          console.log(letters.toLowerCase());
+        }
+        else if(typeof arr[i] == 'number'){
+          star_string(arr[i]);
+        }
+      }
+    }
+    let y = [4, "Tom", 1, "Michael", 5, 7, "Jimmy Smith"];
+    draw_stars2(y);
+
+
+    </script>
+  </head>
+  <body>
+
+  </body>
+</html>

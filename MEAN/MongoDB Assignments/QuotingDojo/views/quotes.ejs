@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Quotes Page</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+  </head>
+  <body>
+    <div class="quotes">
+      <h1>Here are the awesome quotes!</h1>
+      <% for (var x in quotes) { %>
+        <p>"<%= quotes[x].quote %>"</p>
+        <p>--<%= quotes[x].name %> at <%= quotes[x].created_at %></p><hr>
+      <% } %>
+      <form action="/" method="get">
+        <button type="submit" name="button">Go Back</button>
+      </form>
+    </div>
+  </body>
+</html>

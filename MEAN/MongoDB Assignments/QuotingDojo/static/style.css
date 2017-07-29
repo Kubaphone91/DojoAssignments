@@ -1,0 +1,13 @@
+.main{
+  border: 2px solid black;
+  text-align: center;
+  padding-bottom: 15px;
+  width: 70%;
+}
+
+.quotes{
+  border: 2px solid black;
+  padding: 0px 0px 15px 15px;
+  width: 70%;
+
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>New Penguin</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+  </head>
+  <body>
+    <div class="main">
+      <h1>Welcome to the Penguin Dashboard</h1>
+      <img src="img/<%= rand %>.jpg">
+    </div>
+    <div class="new_form">
+      <form action="/penguins" method="post">
+        <h3>Add a new Penguin</h3>
+        Name: <br><input type="text" name="name"><br>
+        Type: <br><select name="type">
+          <option>Emperor</option>
+          <option>King</option>
+          <option>Little</option>
+          <option>Crested</option>
+          <option>African</option>
+        </select><br>
+        Age: <br><input type="text" name="age"><br>
+        Food: <br><input type="text" name="food"><br>
+        <input type="submit" name="" value="Submit">
+      </form>
+      <div class="return">
+        <a href="/">Return to Home Page</a>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Counter Page</title>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+  </head>
+  <body>
+    <h1>Counter:</h1>
+    <h3><%= count %> time(s).</h3>
+    <form method="post">
+      <input formaction="/plus_two" type="submit" name="" value="Add Two">
+      <input formaction="/reset" type="submit" name="" value="Reset">
+    </form>
+  </body>
+</html>
