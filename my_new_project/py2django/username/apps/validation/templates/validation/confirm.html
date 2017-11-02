@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Confirm deletetion</title>
+  </head>
+  <body>
+    <h1>Are you sure you want to delete the following user?</h1>
+    {% for user in users %}
+      <p>Username: {{ user.name }}</p>
+      <p>Created at: {{ user.created_at }}</p>
+    <form method="post">
+      {% csrf_token %}
+      <input type="submit" formaction="/success" value="Go back">
+      <input type="submit" formaction="/users/destroy/{{ user.id }}" value="Delete the user">
+    </form>
+    {% endfor %}
+  </body>
+</html>

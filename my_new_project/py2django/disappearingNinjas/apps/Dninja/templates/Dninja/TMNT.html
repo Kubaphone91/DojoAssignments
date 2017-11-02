@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>TMNT</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static "/Dninja/css/style.css" %}">
+  </head>
+  <body>
+    {% if all %}
+      <img src="{% static tmnt %}" alt="all ninjas">
+      {% elif color == 'blue' %}
+        <img src="{% static leonardo %}" alt="leonardo">
+      {% elif color == 'purple' %}
+        <img src="{% static donatello %}" alt="donatello">
+      {% elif color == 'red' %}
+        <img src="{% static raphael %}" alt="raphael">
+      {% elif color == 'orange' %}
+        <img src="{% static michelangelo %}" alt="michelangelo">
+      {% else %}
+        <img src="{% static april %}" alt="april">
+    {% endif %}
+  </body>
+</html>

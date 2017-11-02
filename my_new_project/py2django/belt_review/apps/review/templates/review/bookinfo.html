@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Book Info</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static '/review/css/style.css' %}">
+  </head>
+  <body>
+    <div class="top">
+      <h4>Welcome, {{ request.session.user.name }}!</h4>
+      <a href="{% url 'review:books' %}">Home</a>  |
+      <a href="{% url 'review:newbook' %}">Add a Book and Review</a>  |
+      <a href="{% url 'review:logout' %}">Log Out</a>
+    </div>
+    <div class="review">
+      <h3>{{ book.title }}</h3>
+      <h3>Author: {{ books.author.name }}</h3><br>
+      <h4>Reviews:</h4>
+    </div>
+    {% for review in reviews %}
+    <div class="book_review">
+      <p><img src="../static/review/img/{{ review.rating }}.png"></p>
+      <p><a href="/users/{{ review.user.id }}">{{ review.user.name }}</a> writes: {{ review.review }}</p>
+      <p>Posted on {{ review.created_at }}</p>
+      {% if request.session.user.id == review.user.id %}
+        <a href="{% url 'review:deletereview' review.id %}">Delete this review</a>
+      {% endif %}
+    </div><br>
+    {% endfor %}
+
+    <div class="review_page">
+      <form action="{% url 'review:newreview' books.id %}" method="post">
+        {% csrf_token %}
+        <div class="form_group">
+          <input type="hidden" name="title" value="{{ books.title }}">
+          <label>Add a review:</label><br><textarea name="review" rows="4" cols="20"></textarea><br>
+        </div>
+        <div class="form_group">
+          <label>Rating:</label><br>
+          <select class="rating" name="rating">
+            <option value="select">Select</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select><br>
+        </div>
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+  </body>
+</html>

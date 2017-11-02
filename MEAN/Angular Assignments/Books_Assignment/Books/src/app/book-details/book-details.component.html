@@ -1,0 +1,28 @@
+<section *ngIf='book'>
+  <fieldset>
+    <legend>Selected Book:</legend>
+    <form (submit)="onSubmit(bookForm)" #bookForm='ngForm'>
+      <div>
+        <label for="">Title</label>
+        <input type="text" name="title" [(ngModel)]="book.title" required>
+      </div>
+      <div>
+        <label for="">Author</label>
+        <input type="text" name="author" [(ngModel)]="book.author" required>
+      </div>
+      <div>
+        <label for="">Year</label>
+        <input type="text" name="year" [(ngModel)]="book.year" required>
+      </div>
+      <div>
+        <label for="">Pages</label>
+        <input type="text" name="pages" [(ngModel)]="book.pages" required>
+      </div>
+      <div>
+        <label for="">Publisher</label>
+        <input type="text" name="publisher" [(ngModel)]="book.publisher" required>
+      </div>
+      <button [hidden]="bookForm.invalied">Update</button>
+    </form>
+  </fieldset>
+</section>

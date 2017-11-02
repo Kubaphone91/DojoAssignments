@@ -1,0 +1,17 @@
+fieldset{
+  margin: 2%;
+}
+
+img{
+  width: 250px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.box{
+  margin: 0% 2% 2% 2%;
+}
+
+.image{
+  display: inline-block;
+}

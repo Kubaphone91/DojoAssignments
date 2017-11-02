@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>This a test for routing properly</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/index.css') }}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/index.js') }}"></script>
+  </head>
+  <body>
+    <div id="wrapper">
+      <h1>This should be on the base page to indicate the first route</h1>
+      <h2>Hello and welcome, this is the Landing Page assignment!</h2>
+      <p>This is to help learn how to successfully use Flask</p>
+      <ul>
+        <li><a href="./ninjas">Ninja Information</a></li>
+        <li><a href="./dojos/new">Ninja Form</a></li>
+      </ul>
+    </div>
+</html>

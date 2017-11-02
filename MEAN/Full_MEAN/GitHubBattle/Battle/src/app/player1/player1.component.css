@@ -1,0 +1,31 @@
+h1 {
+  text-align: center;
+}
+
+label {
+  margin: 10px;
+}
+
+p {
+  text-align: center;
+}
+
+.playerButton {
+  text-align: center;
+  margin: 10px;
+  margin-top: 30px;
+  width: 90%;
+  background-color: blue;
+  color: white;
+  border: 2px solid black;
+  box-shadow: 3px 3px 3px black;
+}
+
+.errors {
+  margin: 5px;
+  height: 10px;
+}
+
+img {
+  width: 100%;
+}

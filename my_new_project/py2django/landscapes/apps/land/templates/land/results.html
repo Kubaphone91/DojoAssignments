@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Landscapes</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static "/land/css/style.css" %}">
+  </head>
+  <body>
+    <h2>Your random Image of the day:</h2>
+    {% if id == 'snow' %}
+      <img src="{% static snow %}" alt="snow">
+    {% elif id == 'desert' %}
+      <img src="{% static desert %}" alt="desert">
+    {% elif id == 'forest' %}
+      <img src="{% static forest %}" alt="forest">
+    {% elif id == 'vineyard' %}
+      <img src="{% static vineyard %}" alt="vineyard">
+    {% elif id == 'tropical' %}
+      <img src="{% static tropical %}" alt="tropical">
+    {% endif %}
+  </body>
+</html>

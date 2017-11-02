@@ -1,0 +1,30 @@
+<main class="col-sm-6 product_form">
+  <h1 class="row">Create a new product</h1>
+  <div class="row">
+    <form class="form-horizontal col-sm-8" (submit)="create()" #formData="ngForm">
+      <div class="form-group">
+        <label for="name" class="col-sm-4">Product Name: </label>
+        <div class="col-sm-8">
+          <input type="text" class="form-control" name="name" required [(ngModel)]="new_product.name">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="price" class="col-sm-4">Price: </label>
+        <div class="col-sm-8">
+          <input type="number" class="form-control" name="price" required [(ngModel)]="new_product.price">
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="url" class="col-sm-4">Image URL: </label>
+        <div class="col-sm-8">
+          <input type="text" class="form-control" name="imgUrl" [(ngModel)]="new_product.imgUrl">
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-sm-8">
+          <button type="submit" [disabled]="!formData.valid">Create</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</main>

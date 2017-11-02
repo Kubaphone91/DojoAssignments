@@ -1,0 +1,25 @@
+body {
+  margin: 10px;
+  text-align: center;
+}
+
+table, th, td, tr {
+  border: 1px solid black;
+  padding: 10px;
+  margin: 5px;
+  text-align: center;
+}
+
+table {
+  border-spacing: 10px;
+}
+
+label, input {
+  margin-bottom: 5px;
+}
+
+.info_submit {
+  border: 2px solid black;
+  padding: 5px;
+  margin: 5px;
+}

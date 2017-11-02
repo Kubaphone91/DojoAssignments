@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Results</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static "SurpriseMe/css/style.css" %}">
+  </head>
+  <body>
+    <h1>Surprises: </h1>
+    <div class="result">
+      <ul>
+        {% for word in words %}
+          <li>{{word}}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    <form action="/" method="post">
+      {% csrf_token %}
+      <button type="submit" name="goback">Go Back</button>
+    </form>
+  </body>
+</html>

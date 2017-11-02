@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login and Registration</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <h1>Welcome to The Quoting Dojo!</h1>
+  <h2>Login or Register</h2>
+  <div class="errors">
+    <% if(typeof(err) != 'undefined') { %>
+      <% if(typeof(err) === 'object') { %>
+        <%= err %>
+      <% } else { %>
+        <%= err %>
+      <% } %>
+    <% } %>
+  </div>
+  <div class="login">
+    <form action="/login" method="post">
+      <fieldset>
+        <legend>Log In:</legend>
+        <label for="email">Email: </label><br>
+        <input type="email" name="email"><br>
+        <label for="password">Password: </label><br>
+        <input type="password" name="password"><br>
+        <input class="button" type="submit" value="Login">
+      </fieldset>
+    </form>
+  </div>
+  <div class="register">
+    <form action="/register" method="post">
+      <fieldset>
+        <legend>Register:</legend>
+        <label for="name.first">First Name: </label><br>
+        <input type="text" name="name.first"><br>
+        <label for="name.last">Last Name: </label><br>
+        <input type="text" name="name.last"><br>
+        <label for="email">Email: </label><br>
+        <input type="text" name="email"><br>
+        <label for="password">Password: </label><br>
+        <input type="password" name="password"><br>
+        <label for="confirm_pass">Confirm Password: </label><br>
+        <input type="password" name="confirm_pass"><br>
+        <label for="birthday">Birthday: </label><br>
+        <input type="date" name="birthday"><br>
+        <input class="button" type="submit" value="Register">
+      </fieldset>
+    </form>
+  </div>
+</body>
+</html>

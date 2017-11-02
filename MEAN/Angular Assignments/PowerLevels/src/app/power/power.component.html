@@ -1,0 +1,34 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<fieldset>
+  <legend>PowerComponent</legend>
+  <header class="left">
+    <section>
+      <label for="power_level">Initial Power (1-100)</label>
+      <input type="number" min="1" max="100" name="power_level" onchange="showValue(this.value)" [(ngModel)]="power_level.power" #powerLevel="ngModel">
+      <img src="../assets/supersaiyan.png" alt="supersaiyan">
+      </section>
+  </header>
+
+  <section class="row">
+    <div class="card">
+      <app-human [human_power]="power_level.power * 1"></app-human>
+    </div>
+    <div class="card">
+      <app-saiyan [saiyan_power]="power_level.power * 10"></app-saiyan>
+    </div>
+    <div class="card">
+      <app-super-saiyan [super_saiyan_power]="power_level.power * 90"></app-super-saiyan>
+    </div>
+  </section>
+  <section class="row">
+    <div class="card">
+      <app-super-saiyan-two [super_saiyan_two_power]="power_level.power * 150"></app-super-saiyan-two>
+    </div>
+    <div class="card">
+      <app-super-saiyan-three [super_saiyan_three_power]="power_level.power * 250"></app-super-saiyan-three>
+    </div>
+    <div class="card">
+      <app-super-saiyan-four [super_saiyan_four_power]="power_level.power * 500"></app-super-saiyan-four>
+    </div>
+  </section>
+</fieldset>

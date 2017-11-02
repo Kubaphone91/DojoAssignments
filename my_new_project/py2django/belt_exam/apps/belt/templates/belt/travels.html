@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Travels</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static '/belt/css/style.css' %}">
+  </head>
+  <body>
+    <div class="top">
+      <h2>Welcome, {{ request.session.user.name }}!</h2>
+      <a href="{% url 'exam:newTravel' %}">Add Travel Plan</a>
+      <a href="{% url 'exam:logout' %}">Log Out</a>
+    </div>
+    {% for message in messages %}
+      {{ message }}
+    {% endfor %}
+    <div class="users_trips">
+      <h3>Your Trip Schdules</h3>
+      <table>
+        <tr>
+          <th>Destination</th>
+          <th>Travel Start Date</th>
+          <th>Travel End Date</th>
+          <th>Plan</th>
+        </tr>
+        {% for travel in travels %}
+        <tr>
+          <td><a href="/travels/destination/{{ travel.id }}">{{ travel.destination }}</a></td>
+          <td>{{ travel.travel_date_from }}</td>
+          <td>{{ travel.travel_date_to }}</td>
+          <td>{{ travel.description }}</td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+    <div class="other_trips">
+      <h3>Other User's Travel Plans</h3>
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Destination</th>
+          <th>Travel Start Date</th>
+          <th>Travel End Date</th>
+          <th>Do you wish to Join?</th>
+        </tr>
+        {% for trip in trips %}
+        <tr>
+          <td>{{ travels.name }}</td>
+          <td><a href="/travels/destination/{{ travel.id }}">{{ travels.destination }}</a></td>
+          <td>{{ travels.travel_date_from }}</td>
+          <td>{{ travels.travel_date_to }}</td>
+          <td><a href="/">Join</a></td>
+        </tr>
+        {% endfor %}
+      </table>
+    </div>
+  </body>
+</html>

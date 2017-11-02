@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Books Review Page</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static '/review/css/style.css' %}">
+  </head>
+  <body>
+    <div class="top">
+      <h4>Welcome, {{ request.session.user.name }}!</h4>  |
+      <a href="{% url 'review:newbook' %}">Add a Book and Review</a>  |
+      <a href="{% url 'review:logout' %}">Log Out</a>
+    </div>
+    <div class="reviews">
+      <h3>Recent book reviews</h3>
+      {% for review in reviews %}
+      <div class="book_reviews">
+        <a href="/books/{{ review.book.id }}"><h3>{{ review.book.title }}</h3></a>
+        <h5>{{ review.book.author.name }}</h5>
+
+        <p><img src="../static/review/img/{{ review.rating }}.png"></p>
+        <p><a href="/users/{{ review.user.id }}">{{ review.user.name }}</a> said: {{ review.review }}</p>
+        <h6>Reviewed on {{ review.created_at }}</h6>
+        {% if request.session.user.id == review.user.id %}
+          <a href="{% url 'review:deletereview' review.id %}">Delete this review</a>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+    <div class="review_page">
+      <h3>All books with reviews</h3>
+      {% for book in books %}
+        <ul>
+          <a href="/books/{{ book.id }}">{{ book.title }}</a>
+        </ul>
+      {% endfor %}
+    </div>
+  </body>
+</html>

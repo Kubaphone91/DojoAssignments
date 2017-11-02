@@ -1,0 +1,22 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
+
+#wrapper{
+  padding: 15px;
+  color: white;
+  background-color: blue;
+  border: 2px black solid;
+  width: 400px;
+}
+input{
+  display: block;
+}
+h1{
+  margin-bottom: 10px;
+}
+
+.submit{
+  margin-top: 5px;
+}

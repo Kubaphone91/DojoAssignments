@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Index Page</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        var socket = io.connect();
+        $('button').click(function(e){
+          e.preventDefault();
+          socket.emit("posting_form",{
+            name: $('#name').val(),
+            location: $('#location').val(),
+            language: $('#language').val(),
+            comments: $('#comments').val(),
+          });
+        });
+        socket.on('updated_message', function(data){
+          $("#form_info").addClass('message');
+          $("#form_info").html(`<p> You emitted the following information to the server: ${ JSON.stringify(data.post_data) }</p>
+                                <p>Your lucky number emitted by the server is: ${ data.rand }</p>`);
+        });
+      })
+    </script>
+  </head>
+  <body>
+    <div id="form_info">
+
+    </div>
+    <div class="main">
+      <h1>Submit your Information!</h1>
+      <form>
+        <span>Name: </span><input type="text" name="name" id="name"><br>
+        <span>Dojo Location: </span><select name="location" id="location">
+          <option value="Seattle">Seattle</option>
+          <option value="Los Angeles">Los Angeles</option>
+          <option value="Silicon Valley">Silicon Valley</option>
+          <option value="Washington D.C.">Washington D.C.</option>
+          <option value="Dallas">Dallas</option>
+          <option value="Chicago">Chicago</option>
+          <option value="Online">Online</option>
+        </select><br>
+        <span>Favorite Language: </span><select name="language" id="language">
+          <option value=".NET/C#">.NET/C#</option>
+          <option value="MEAN">MEAN</option>
+          <option value="Ruby on Rails">Ruby on Rails</option>
+          <option value="Javascript">Javascript</option>
+          <option value="Python">Python</option>
+          <option value="C/C++">C/C++</option>
+        </select><br>
+        <span>Comment (optional): </span><br><textarea name="comments" rows="4" cols="30" id="comments"></textarea><br>
+        <button type="submit" name="button">Submit Info</button>
+      </form>
+    </div>
+  </body>
+</html>

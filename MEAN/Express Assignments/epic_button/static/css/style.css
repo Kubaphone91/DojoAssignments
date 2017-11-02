@@ -1,0 +1,35 @@
+html {
+  margin-top: 5%;
+  text-align: center;
+}
+
+.main{
+  border: 2px solid black;
+}
+
+.form {
+  padding: 1% 1% 2% 1%;
+  margin: 2% 0% 2% 0%;
+}
+
+.epic {
+border: 1px solid black;
+background-color: #085394;
+border-radius: 25px;
+padding: 35px;
+color: #FAFAFA;
+font-size: 2em;
+}
+
+.reset {
+border: 1px solid black;
+background-color: #CF2A27;
+border-radius: 25px;
+padding: 2.5% 4%;
+color: #FAFAFA;
+margin-bottom: 1%;
+}
+
+.count{
+  color: red;
+}

@@ -1,0 +1,34 @@
+<section>
+  <div>
+    <fieldset>
+      <legend>Login</legend>
+      <form (submit)='login(loginForm)' #loginForm='ngForm'>
+        <label for="">Email: </label>
+        <input type="email" name="email">
+        <label for="">Password: </label>
+        <input type="password" name="password">
+        <button>Login</button>
+      </form>
+    </fieldset>
+  </div>
+  <div>
+    <fieldset>
+      <legend>Register</legend>
+      <form (submit)='register(registerForm)' #registerForm='ngForm'>
+        <div>
+          <label for="">Username: </label>
+          <input type="text" name="username" [(ngModel)]='registerUser.username'>
+        </div>
+        <div>
+          <label for="">Email: </label>
+          <input type="email" name="email" [(ngModel)]='registerUser.email'>
+        </div>
+        <div>
+          <label for="">Password: </label>
+          <input type="password" name='password' [(ngModel)]='registerUser.password'>
+        </div>
+        <button>Register</button>
+      </form>
+    </fieldset>
+  </div>
+</section>

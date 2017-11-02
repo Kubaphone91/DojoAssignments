@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Open Weather</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('form').submit(function(){
+          var city = $('input[name=city]').val();
+          var url = 'http://api.openweathermap.org/data/2.5/weather?q='+city+'&APPID=91cb19f83c3e04d5e6e609c7e50987f6'
+          $.get(url, function(res){
+            var temperatureF = Math.round(((9/5)*(res.main.temp - 273))+32);
+            var html_str = '';
+            html_str += '<h2>' + res.name + '</h2>';
+            html_str += '<p>Temperature: ' + temperatureF +' degrees Farenheit</p>';
+            $('#info').html(html_str);
+          },'json');
+          return false;
+        });
+      });
+    </script>
+    <style media="screen">
+
+    </style>
+
+  </head>
+  <body>
+    <form class="" action="" method="post">
+      <input type="text" name="city" placeholder="Choose a city">
+      <input type="submit" name="" value="Search Weather">
+    </form>
+    <div id="info">
+    </div>
+  </body>
+</html>

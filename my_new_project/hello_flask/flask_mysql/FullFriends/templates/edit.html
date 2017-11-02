@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Full Friends</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css')}}">
+  </head>
+  <body>
+    <div class="editing">
+      <form action="/friends/<id>/edit" method="POST">
+        {% for user in users %}
+          First Name: <input type="text" name="first_name" value="{{ first_name }}"><br>
+          Last Name: <input type="text" name="last_name" value="{{ last_name }}"><br>
+          Email: <input type="text" name="email" value="{{ email }}"><br>
+          <input type="hidden" name="id" value="{{ id }}">
+          <input type="hidden" name="update" value="update">
+          <input type="submit" formaction="/friends/<id>" value="Update">
+        {% endfor %}
+      </form>
+      <form action="/goback" method="POST">
+        <input type="hidden" name="goback" value="goback">
+        <input type="submit" value="Go Back">
+      </form>
+    </div>
+  </body>
+</html>

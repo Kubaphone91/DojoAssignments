@@ -1,0 +1,61 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
+h1, h2{
+  margin: 20px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.login, .register{
+  margin: 20px;
+  display: inline-block;
+  width: 300px;
+  vertical-align: top;
+}
+fieldset{
+  padding-bottom: 20px;
+  border: 3px solid #0E4F9D;
+}
+legend{
+  margin-left: 10px;
+  font-weight: bold;
+  font-size: 16pt;
+}
+label{
+  margin: 10px;
+  width: 135px;
+  display: inline-block;
+}
+input {
+  margin-bottom: 5px;
+}
+.errors{
+  display: block;
+  color: red;
+  margin: 20px;
+}
+textarea{
+  margin-top: 10px;
+  vertical-align: top;
+}
+.quotes{
+  margin-left: 60px;
+}
+.enterQuote{
+  margin-left: 120px;
+  width: 397px;
+}
+p{
+  margin-top: 10px;
+}
+.button{
+  display: inline-block;
+  margin-left: 40px;
+  margin-top: 20px;
+  box-shadow: 3px 3px 2px black;
+}
+.indent{
+  margin-left: 40px;
+  margin-bottom: 10px;
+}

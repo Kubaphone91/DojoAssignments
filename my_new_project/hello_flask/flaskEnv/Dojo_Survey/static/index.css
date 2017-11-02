@@ -1,0 +1,18 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
+
+form{
+  border: 5px solid black;
+  padding: 15px;
+  font-family: sans-serif;
+  background-color: blue;
+  color: white;
+  height: 250px;
+  width: 300px;
+}
+
+span{
+  margin-bottom: 10px;
+}

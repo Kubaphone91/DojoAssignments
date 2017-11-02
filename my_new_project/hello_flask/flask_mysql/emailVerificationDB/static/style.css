@@ -1,0 +1,37 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
+
+#verification{
+  display: inline-block;
+  border: 2px black solid;
+  padding: 30px;
+  position: absolute;
+  left: 200px;
+  top: 100px;
+  width: 300px;
+}
+
+h1{
+  margin-bottom: 10px;
+}
+
+.error{
+  border: 2px solid black;
+  background-color: red;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  margin-bottom: 5px;
+}
+
+#success{
+  border: 2px solid black;
+  background: green;
+  color: white;
+  padding: 15px;
+  text-align: center;
+  margin-bottom: 5px;
+  width: 500px;
+}

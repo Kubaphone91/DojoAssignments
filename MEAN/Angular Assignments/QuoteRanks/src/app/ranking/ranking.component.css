@@ -1,0 +1,14 @@
+.quotation{
+    border: solid 1px black;
+    padding: 10px;
+}
+.up{
+    background-color: green;
+}
+.down{
+    background-color: red;
+}
+.delete{
+    background-color: gray;
+    color: white;
+}

@@ -1,0 +1,20 @@
+.wrapper {
+  border: 2px solid black;
+}
+
+.picture,
+.score,
+.rank {
+  margin: 20px;
+  display: inline-block;
+}
+
+.picture {
+  margin-left: 20px;
+  width: 200px;
+  vertical-align: top;
+}
+
+img {
+  width: 100%
+}

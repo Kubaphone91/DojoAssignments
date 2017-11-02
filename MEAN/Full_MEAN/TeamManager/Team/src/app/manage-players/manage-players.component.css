@@ -1,0 +1,27 @@
+.header {
+    margin: 20px;
+}
+
+a {
+    color: inherit;
+    color: blue;
+    text-decoration: underline;
+    font-size: 20pt;
+}
+
+a:active {
+    font-weight: bold;
+}
+
+a:hover {
+    font-weight: bold;
+}
+
+.component {
+    margin: 20px;
+    background-color: white;
+    padding: 20px;
+    width: 89%;
+    height: 75%;
+    overflow: scroll;
+}

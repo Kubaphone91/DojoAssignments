@@ -1,0 +1,28 @@
+.normal{
+  text-align: center;
+  height: 750px;
+  width: 500px;
+  font-family: sans-serif;
+}
+
+.incorrect{
+  background-color: red;
+  color: white;
+  font-family: sans-serif;
+  border: 2px solid black;
+  margin: 0px auto;
+  padding: 20px;
+  height: 10%;
+  width: 30%;
+}
+
+.correct{
+  background-color: green;
+  color: white;
+  font-family: sans-serif;
+  border: 2px solid black;
+  margin: 0px auto;
+  padding: 20px;
+  height: 10%;
+  width: 30%;
+}

@@ -1,0 +1,14 @@
+<table>
+    <tr>
+      <th style='width: 40%;'>Team Name</th>
+      <th style='width: 60%;'>Actions</th>
+    </tr>
+    <tr *ngFor='let player of playerList'>
+      <td>{{ player.name }}</td>
+      <td>
+        <button [ngClass]="{'playing': player.game2.playing}" (click)="playing(player._id)">Playing</button>
+        <button [ngClass]="{'notPlaying': player.game2.notPlaying}" (click)="nptPlaying(player._id)">Not Playing</button>
+        <button [ngClass]="{'undecided': player.game2.undecided}" (click)="undecided(player._id)">Undecided</button>
+      </td>
+    </tr>
+  </table>

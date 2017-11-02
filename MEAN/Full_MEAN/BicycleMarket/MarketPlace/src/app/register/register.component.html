@@ -1,0 +1,20 @@
+<form (submit)='registerUser(regForm)' #regForm='ngForm'>
+  <label for="firstName">*First Name:</label>
+  <input type="text" name="firstName" [(ngModel)]="registeredUser.firstName" required minlength="2" #firstName='ngModel'>
+  <span class='alert' *ngIf="firstName.invalid">A first name is required (minimum 2 characters)</span>
+  <label for="lastName">*Last Name:</label>
+  <input type="text" name="lastName" [(ngModel)]="registeredUser.lastName" required minlength="2" #lastName='ngModel'>
+  <span class='alert' *ngIf="lastName.invalid">A last name is required (minimum 2 characters)</span>
+  <label for="email">*Email:</label>
+  <input type="text" name="email" [(ngModel)]="registeredUser.email" required #email='ngModel'>
+  <span class='alert' *ngIf="email.invalid">An email is required</span>
+  <span class='alert' *ngIf="errors">Proper email is required</span>
+  <label for="password">*Password:</label>
+  <input type="password" name="password" [(ngModel)]="registeredUser.password" required minlength="16" #password='ngModel'>
+  <span class='alert' *ngIf="password.invalid">A password is required! (minimum 16 characters)</span>
+  <label for="confirm_pass">*Confirm Password:</label>
+  <input type="password" name="confirm_pass" [(ngModel)]="confirmpw" #confirm_pass='ngModel'>
+  <span class='alert' *ngIf="confirm_pass.model !== password.model">You must confirm your password (Password and Confirm password must match)</span>
+  <input type="submit" value="Register" class="button">
+  <span class='alert' *ngIf="regForm.invalid">You must complete all fields marked with '*'</span>
+</form>

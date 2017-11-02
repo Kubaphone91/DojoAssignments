@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Dojo Results</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='results.css') }}">
+  </head>
+  <body>
+      <h2><u>Submitted Info</u></h2>
+      <br>
+      <div id="information">
+        <p>Name: {{ name }}</p>
+        <p>Location: {{ location }}</p>
+        <p>Favorite Language: {{ language }}</p>
+        <p>Comments: {{ comment }}</p>
+      </div>
+  </body>
+</html>

@@ -1,0 +1,10 @@
+<fieldset>
+  <legend>HumanComponent</legend>
+  <div class="div-box">
+    <h3>Power Level: {{human_power}}</h3>
+    <p *ngIf="human_power > 9000 && human_power < 20000">It's over 9000!</p>
+    <p *ngIf="human_power >= 20000 && human_power < 50000 && human_power != 25000">Superlative!</p>
+    <p *ngIf="human_power === 25000">Superlative Powers!</p>
+    <p *ngIf="human_power === 50000">The One!</p>
+  </div>
+</fieldset>

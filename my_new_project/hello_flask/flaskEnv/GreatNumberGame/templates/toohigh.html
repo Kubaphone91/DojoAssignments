@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Too high of a guess</title>
+    <link rel="stylesheet" type="text/css" href=" {{ url_for('static', filename='index.css') }}">
+  </head>
+  <body>
+    <div class="normal">
+      <h1>Welcome to the Great Number Game!</h1>
+      <p>I am thinking of a number between 1 and 100</p>
+      <p>Take a guess!</p>
+      <div class="incorrect">
+        <h3>Too High!</h3>
+      </div>
+      <br>
+      <form class="" action="" method="post">
+        <input type="number" name="guess" min="1" max="100" required>
+        <input type="submit" formaction="/guess" name="submit" value="Guess again!">
+      </form>
+    </div>
+  </body>
+</html>

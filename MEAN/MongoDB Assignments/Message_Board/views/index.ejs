@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Message Board</title>
+    <style media="screen">
+      *{
+        font-family: geneva;
+      }
+      h1{
+        text-align: center;
+      }
+      .top{
+        border-bottom: 1px solid black;
+        width: 90%;
+      }
+      input, textarea{
+        display: block;
+        margin-bottom: 2em;
+      }
+      textarea{
+        width: 60%;
+        height: 10em;
+      }
+      h5, .comment_input {
+        margin-left: 12%;
+      }
+      #post {
+        color:white;
+        background-color: blue;
+        margin-left: 36.7%;
+        width:15em;
+        height: 3em;
+      }
+      .comment_text {
+        width: 40%;
+        height: 6em;
+        margin-left: 12%; 
+      }
+      .margin{
+        margin-left: 12%;
+        margin-bottom: -.1em;
+      }
+      .post2 {
+	      color:white;
+	      background-color: green;
+	      margin-left: 33.2%;
+	      width:12em;
+	      height: 2.5em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="top">
+      <h1>Welcome to the Dojo Message Board!</h1>
+    </div>
+    <div>
+      <form action="/messages/new" method="post">
+        Name: <br><input type="text" name="name">
+        Message: <br><textarea name="message_text" cols="40" rows="8"></textarea>
+        <input id="post" type="submit" name="submit" value="Post Message">
+      </form>
+    </div>
+    <div>
+      <% for (const message of messages) { %>
+        <h3>Name: <%= message.name %></h3>
+        <h3>Message: <%= message.message_text %></h3>
+          <% for (const comment of message.comments) { %>
+            <div>
+              <h5>Name: <%= comment.name %></h5>
+              <h5>Comment: <%= comment.comment_text %></h5>
+            </div>
+            <br>
+        <% } %>
+        <form action="/messages/add_comment/<%= message._id %>" method="post">
+          <p class="margin">Name:</p><input class="comment_input" type="text" name="name">
+          <p class="margin">Comment:</p><textarea class="comment_text" name="comment_text" rows="3" cols="20"></textarea>
+          <input class="post2" type="submit" value="Post comment">
+        </form>
+      <% } %>
+    </div>
+  </body>
+</html>

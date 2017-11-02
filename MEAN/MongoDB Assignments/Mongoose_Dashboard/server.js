@@ -53,7 +53,7 @@ app.get('/penguins/:id', function(req, res){
       console.log(err);
     }
     else{
-      res.render('show', { penguin: response[0], rand: RandImg() });
+      res.render('show', { rand: RandImg(), penguin: response[0] });
     }
   });
 });

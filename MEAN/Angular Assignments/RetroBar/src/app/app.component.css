@@ -1,0 +1,10 @@
+.barcode{
+  height: 50px;
+  border: 2px solid black;
+  display: inline-block;
+}
+
+.color{
+  height: 50px;
+  width: 50px;
+}

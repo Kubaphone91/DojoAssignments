@@ -1,0 +1,21 @@
+main {
+  border: 1px solid black;
+}
+
+img {
+    vertical-align: top;
+    width: 350px;
+    display: inline-block;
+}
+
+h1 {
+  text-align: center;
+}
+
+p {
+  font-size: 1.2em;
+}
+
+.weather {
+  margin: 35px 10px 30px 10px;
+}

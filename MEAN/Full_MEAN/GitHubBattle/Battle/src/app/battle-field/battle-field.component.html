@@ -1,0 +1,7 @@
+<div class="component">
+  <app-player1></app-player1>
+</div>
+<div class="component">
+  <app-player2></app-player2>
+</div>
+<button [routerLink]="['/results']" class="battleButton" *ngIf='gotUserOne && gotUserTwo'>Battle!</button>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Layouts</title>
+  </head>
+  <style>
+  /* Small sized screens */
+    @media only screen and (max-width: 480px) {
+      .col-s-0 {display: none;}
+      .col-s-12 {width: 100%;}
+    }
+  /* Medium sized screens */
+    @media only screen and (min-width: 768px) {
+      .col-m-1  {width: 8.33%;}
+      .col-m-2  {width: 16.66%;}
+      .col-m-3  {width: 25%;}
+      .col-m-4  {width: 33.33%;}
+      .col-m-5  {width: 41.66%;}
+      .col-m-6  {width: 50%;}
+      .col-m-7  {width: 58.33%;}
+      .col-m-8  {width: 66.66%;}
+      .col-m-9  {width: 75%;}
+      .col-m-10 {width: 83.33%;}
+      .col-m-11 {width: 91.66%;}
+      .col-m-12 {width: 100%;}
+    }
+  /* Large sized screens */
+    @media only screen and (min-width: 1024px) {
+      .col-l-1  {width: 8.33%;}
+      .col-l-2  {width: 16.66%;}
+      .col-l-3  {width: 25%;}
+      .col-l-4  {width: 33.33%;}
+      .col-l-5  {width: 41.66%;}
+      .col-l-6  {width: 50%;}
+      .col-l-7  {width: 58.33%;}
+      .col-l-8  {width: 66.66%;}
+      .col-l-9  {width: 75%;}
+      .col-l-10 {width: 83.33%;}
+      .col-l-11 {width: 91.66%;}
+      .col-l-12 {width: 100%;}
+    }
+    *{
+      box-sizing: border-box;
+    }
+    #wrapper{
+      width: 90%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .header{
+      background-color: #dddddd;
+      padding: 10px;
+      font-family: sans-serif;
+      margin: 10px;
+    }
+    .links ul{
+      list-style-type: none;
+    }
+    .links li{
+      background-color: #D8D8DC;
+      width: auto;
+      display: inline-block;
+      padding: 10px;
+      margin-bottom: 5px;
+    }
+  .row{
+    padding-left:20px;
+    clear:both;
+  }
+  .column{
+    float: left;
+    padding-right: 20px;
+  }
+  .content{
+    padding: 20px;
+  }
+  </style>
+  <body>
+    <div id="wrapper">
+      <div class="header">
+        <h1>Header</h1>
+        <h2>Subtitle</h2>
+      </div>
+      <div class="row">
+        <div class="links col-s-0 col-m-9 col-l-12">
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li><a href="#">Videos</a></li>
+            <li><a href="#">Pricing</a></li>
+            <li><a href="#">Something</a></li>
+            <li><a href="#">Something more...</a></li>
+            <li><a href="#">Something even more...</a></li>
+          </ul>
+        </div>
+        <div class="column col-s-12 col-m-4 col-l-3">
+          <div class="content">
+            <h4>Coffee Ipsum</h4>
+            <p>Qui at grinder, galao latte saucer kopi-luwak aroma froth. Galao organic turkish java that kopi-luwak americano redeye grounds. Con panna turkish, body, viennese, mocha macchiato plunger pot americano sugar. ID single shot mocha, et affogato turkish roast cream brewed.</p>
+          </div>
+        </div>
+        <div class="column col-s-12 col-m-4 col-l-3">
+          <div class="content">
+            <h4>Lorem Ipsum</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam phatera vitae ipsum a convallis. Sed quis sapien sed lacus fringilla commodo. Vivamus viverra egestas dolor, id ornare sapien laoreet vel. Donec nisi lacus, accumsan vitae iaculis ut, feugiat vel risus. Aenean molestie nec lorem quis rhoncus. Vivamus sit amet elementum nibh, a tristique dui. Proin blandit dolor nec lacus lobortis non imperdiet risus porta. Marcenas adipiscing gravida congue. In non viverra erat. Nam porta elit quis risus tempor phaetra. Cras tempus augue ut dolor suscipit cursus.</p>
+          </div>
+        </div>
+        <div class= "column col-s-12 col-m-4 col-l-3">
+          <div class="content">
+            <h4>Baby Ipsum</h4>
+            <p>Ya yaya beddy-bye gaa ya ya. Doo gaga yaya gaagaa doodoo. Da gaagaa num nums yaya laa yaya doo laa laalaa passie ya goo ya. Doo gaga laa laalaa laa doo. Gaagaa dada ga pee-pee yaya gaga gaagaa doo doo goo dada gaagaa goo doo.  Doo gaga yaya gaagaa doodoo. Da gaagaa num nums yaya laa yaya doo laa laalaa passie ya goo ya. Doo gaga laa laalaa laa doo. Gaagaa dada ga pee-pee yaya gaga gaagaa doo doo goo dada gaagaa goo doo. Goo googoo da goo bye-bye puffer gaa dada d.</p>
+          </div>
+        </div>
+        <div class="column col-s-12 col-m-12 col-l-3">
+          <div class="content">
+            <h4>Zombie Ipsum</h4>
+            <p>Xombie ipsum reversus ab viral inferno, nam rick grimes malum cerebro. De carne lumbering animata corpora quaeritis. Summus brains sit, morbo vel maleficia? De apocalypsi gorger omero undead survivor dictum mauris. Hi mindless mortuis soulless creaturas, imo evil stalking monstra adventus resi dentevil vultus comedat cerebella viventium. Qui animated corpse, cricket bat max brucks terribilem incessu zomby. The voodoo sacerdos flesh eater, suscitat mortuos comedere carnem virus. Zonbi tattered for solum oculi eorum defunctis go lum cerebro. Nescio brains an Undead zombies. Sicut malus putrid voodoo horror. Nigh tofth eliv ingdead.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

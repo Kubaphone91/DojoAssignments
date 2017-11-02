@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Main Page</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static "/land/css/style.css" %}">
+  </head>
+  <body>
+    <div class="welcome">
+      <h1>Welcome!</h1>
+      <h3>Enter any number between 1-50</h3>
+      <h5>For example: localhost:8000/32</h5>
+    </div>
+    {% if messages %}
+      {% for message in messages %}
+        <p>{{ message }}</p>
+      {% endfor %}
+    {% endif %}
+  </body>
+</html>

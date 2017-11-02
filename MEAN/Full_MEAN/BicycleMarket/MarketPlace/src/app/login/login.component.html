@@ -1,0 +1,9 @@
+<form (submit)='login(loginForm)' #loginForm='ngForm'>
+  <label for="email">Email: </label>
+  <input type="email" name="email" [(ngModel)]="loggedInUser.email" required #email='ngModel'>
+  <span class="alert" *ngIf="email.dirty && email.invalid">You must enter in your email</span>
+  <label for="password">Password: </label>
+  <input type="password" name="password" [(ngModel)]="loggedInUser.password" required minlength="16" #password='ngModel'>
+  <span class="alert" *ngIf="password.dirty && password.invalid">A password is required (16 characters minimum)</span>
+  <input type="submit" value="Login" class="button" [disabled]='loginForm.invalid'>
+</form>

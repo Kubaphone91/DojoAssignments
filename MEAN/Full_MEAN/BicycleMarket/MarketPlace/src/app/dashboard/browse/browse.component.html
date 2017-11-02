@@ -1,0 +1,35 @@
+<div class="main">
+  <label for="search">Search: </label>
+  <input type="search" name="search">
+  <button>Search</button>
+  <div class="listings">
+    <div *ngFor="let bike of bikeList" class="bikeItem">
+      <div class="image">
+        <img [src]="bike.image">
+      </div>
+      <div class="description">
+        <h1>{{ bike.title }}</h1>
+        <p>{{ bike.description }}</p>
+      </div>
+      <div class="price">
+        <h1>${{ bike.price }}</h1>
+        <p>{{ bike.location }}</p>
+        <button class="contact" *ngIf="currentId != bike._user._id" data-toggle="modal" data-target="#modal">Contact</button>
+        <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-body">
+                <p>Name: {{ bike._user.firstName }}</p>
+                <p>Email: {{ bike._user.email }}</p>
+              </div>
+              <div class="modal-footer">
+                <button data-dismiss="modal">Close</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="delete" *ngIf="currentId == bike._user.id" (click)="delete(bike._id)">Delete</button>
+      </div>
+    </div>
+  </div>
+</div>

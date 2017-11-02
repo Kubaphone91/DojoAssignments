@@ -1,0 +1,11 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class='container'>
+  <h1>{{ title }}</h1>
+  <div class="buttons" *ngFor="let button of buttons; let idx = index">
+    <button class="button_on" *ngIf="button" [ngClass]="{'on': button}" (click)="switch(idx)">ON</button>
+    <button class="button_off" *ngIf="!button" [ngClass]="{'on': button}" (click)="switch(idx)">OFF</button>
+  </div>
+  <div>
+    <h2>Press the buttons!</h2>
+  </div>
+</div>

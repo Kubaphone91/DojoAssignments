@@ -1,0 +1,10 @@
+.main {
+  margin: 20px;
+  background-color: black;
+  border: 3px solid blue;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+}

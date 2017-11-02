@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Counter</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='counter.css') }}">
+  </head>
+  <body>
+    <div id="wrapper">
+      <h1>Counter</h1><br>
+      <p>{{ session['counter'] }} time(s).</p>
+      <form class="" action="index.html" method="post">
+        <input type="submit" formaction="/ninja" name="submit" value="Ninjas">
+        <input type="submit" formaction="/hacker" name="reset" value="Hackers">
+      </form>
+    </div>
+  </body>
+</html>

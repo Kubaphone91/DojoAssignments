@@ -1,0 +1,15 @@
+<div class="container">
+  <div id="scoreformdiv">
+    <h1>GitHub Score</h1>
+    <form (submit)='getGitHubScore()' #gitForm="ngForm">
+      <label for="username">GitHub Username:</label>
+      <input type="text" name="username" required [(ngModel)]='username'><br><br>
+      <input type="submit" value="Calculate my GitHub Score" [disabled]='!gitForm.form.valid'>
+    </form>
+  </div>
+  <div id='scoreresultdiv'>
+    <h2>Your Score: {{ score }}</h2>
+    <h3 [class]="status[0]">{{status[1]}}</h3>
+    <p *ngIf="status[2]==='success'">GitHub profile (opens a new window): </p><a href="https://github.com/{{username}}" target="_blank">{{username}}</a>
+  </div>
+</div>

@@ -1,0 +1,15 @@
+<form action="/" #quoteform="ngForm" name='quoteform' id='quoteform'>
+  <h1>Add a Quote</h1>
+  <textarea name="textField" id="textField" cols="60" rows="5" [(ngModel)]='text' required minlength='4' #textField='ngModel'></textarea><br>
+  <span *ngIf="textField.dirty && !textField.vaid" class="error">
+    <span *ngIf="textField.errors.required">Quote is required.</span>
+    <span *ngIf="textField.errors.minlength">Quote must be at least 4 characters.</span>
+  </span>
+  <label for="authorField">Author</label>
+  <input type="text" name="authorField" id="authorField" [(ngModel)]='author' required minlength='1' #authorField='ngModel'>
+  <span *ngIf="authorField.dirty && !authorField.valid" class="error">
+    <span *ngIf="authorField.errors.required">Author is required.</span>
+    <span *ngIf="authorField.errors.minlength">Author must be at least 1 character.</span>
+  </span>
+    <button [disabled]="quoteform.form.invalid" type="button" (click)='addquote(); quoteform.reset();'>Add Quote</button>
+</form>

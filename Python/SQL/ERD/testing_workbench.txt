@@ -1,0 +1,11 @@
+USE books;
+SELECT * FROM books;
+INSERT INTO books (title, author, created_at, updated_at) VALUES ('Harry Potter and Chamber of Secrets', 'JK Rowling', NOW(), NOW());
+INSERT INTO books (title, author, created_at, updated_at) VALUES ('Harry Potter and Prisoner of Azkaban', 'JK Rowling', NOW(), NOW());
+INSERT INTO books (title, author, created_at, updated_at) VALUES ('Harry Potter and Goblet of Fire', 'JK Rowling', NOW(), NOW());
+INSERT INTO books (title, author, created_at, updated_at) VALUES ('Harry Potter and the Half-Blood Prince', 'JK Rowling', NOW(), NOW());
+INSERT INTO books (title, author, created_at, updated_at) VALUES ('Harry Potter and the Deathly Hollows', 'JK Rowling', NOW(), NOW());
+DELETE FROM books WHERE id = 5;
+INSERT INTO books (title, author, created_at, updated_at) VALUES ('Harry Potter and the Deathly Hollows Pt 1', 'JK Rowling', NOW(), NOW());
+INSERT INTO books (title, author, created_at, updated_at) VALUES ('Harry Potter and the Deathly Hollows Pt 2', 'JK Rowling', NOW(), NOW());
+UPDATE books SET author = 'J.K. Rowling' WHERE NOT id = 5;

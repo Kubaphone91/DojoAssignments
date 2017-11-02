@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Add a Trip</title>
+  </head>
+  <body>
+    <a href="{% url 'exam:travels' %}">Home</a>
+    <a href="{% url 'exam:logout' %}">Log Out</a>
+    <h2>Add a Trip</h2>
+    {% if messages %}
+      <ul>
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+    <form class="trip_add" action="{% url 'exam:createTravel' %}" method="post">
+      {% csrf_token %}
+      <label>Destination: </label><br>
+      <input type="text" name="destination"><br>
+      <label>Desription: </label><br>
+      <textarea name="description" rows="4" cols="20"></textarea><br>
+      <label>Travel Date From: </label><br>
+      <input type="text" name="travel_date_from"><br>
+      <label>Travel Date To: </label><br>
+      <input type="text" name="travel_date_to"><br>
+      <input type="submit" value="Add">
+    </form>
+  </body>
+</html>

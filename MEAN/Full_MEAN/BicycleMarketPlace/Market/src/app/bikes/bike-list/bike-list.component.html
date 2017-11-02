@@ -1,0 +1,29 @@
+<div id="wrapper">
+  <div class="search">
+    <label>Search</label>
+    <input type="text" id="search" name="searchBar" class="searchBar" [(ngModel)]="searchStr">
+  </div>
+  <div class="bike" *ngFor="let b of allBikes | filter:searchStr">
+    <div class="col-sm-3">
+      <img [src]="b.image">
+    </div>
+    <div class="col-sm-7">
+      <h2>{{ b.title }}</h2>
+      <p>{{ b.description }}</p>
+    </div>
+    <div class="col-sm-2">
+      <h2>{{ b.price | currency:USD:true }}</h2>
+      <h4>{{ b.location }}</h4>
+      <button (click)="getContactInfo(b.user_id)" *ngIf="b.user_id != currentUserId">Contact</button>
+      <button (click)="deleteBike(b)" *ngIf="b.user_id == currentUserId">Delete</button>
+    </div>
+  </div>
+</div>
+
+<div id="contactModal" class="modal">
+  <div class="modal-content">
+    <span class="close" (click)="closeModal()">&times;</span>
+    <p>Name: {{ contact.name }}</p>
+    <p>Email: {{ contact.email }}</p>
+  </div>
+</div>

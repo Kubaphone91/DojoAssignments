@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Login and Registration</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static "/login_app/css/style.css" %}">
+  </head>
+  <body>
+    <div class="flash">
+      {% if messages %}
+        <ul>
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+    </div>
+    <div class="reg">
+      <h1>Register</h1>
+      <hr>
+      <form action="{% url 'login_app:register' %}" method="POST">
+        {% csrf_token %}
+        <label>First Name: </label><br><input type="text" name="first_name"><br>
+        <label>Last Name: </label><br><input type="text" name="last_name"><br>
+        <label>Email: </label><br><input type="text" name="email"><br>
+        <label>Password: </label><br><input type="password" name="password"><br>
+        <label>Confirm Password: </label><br><input type="password" name="confirm_pass"><br>
+        <input type="submit" name="register" value="Register">
+      </form>
+    </div>
+    <br>
+    <div class="log">
+      <h1>Login</h1>
+      <hr>
+      <form action="{% url 'login_app:login' %}" method="POST">
+        {% csrf_token %}
+        <label>Email: </label><br><input type="text" name="email_log"><br>
+        <label>Password: </label><br><input type="password" name="password_log"><br>
+        <input type="submit" name="login" value="Log In">
+      </form>
+    </div>
+  </body>
+</html>

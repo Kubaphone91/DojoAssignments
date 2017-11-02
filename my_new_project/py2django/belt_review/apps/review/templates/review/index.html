@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Belt Reviewer</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static '/review/css/style.css' %}">
+  </head>
+  <body>
+    <h1>Welcome!</h1>
+    {% if messages %}
+    <div class="error">
+      <ul>
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    {% endif %}
+    <div class="register">
+      <h2>Register</h2>
+      <form class="reg" action="{% url 'review:register' %}" method="post">
+        {% csrf_token %}
+        <label>Name: </label><br><input type="text" name="name"><br>
+        <label>Alias: </label><br><input type="text" name="alias"><br>
+        <label>Email: </label><br><input type="text" name="email"><br>
+        <label>Password: </label><br><input type="password" name="password"><br>
+        <label>Confirm Password: </label><br><input type="password" name="confirm_pass"><br>
+        <input type="submit" name="register" value="Register">
+      </form>
+    </div>
+    <div class="login">
+      <h2>Login</h2>
+      <form class="log" action="{% url 'review:login' %}" method="post">
+        {% csrf_token %}
+        <label>Email: </label><br><input type="text" name="email_log"><br>
+        <label>Password: </label><br><input type="password" name="password_log"><br>
+        <input type="submit" name="login" value="Log In">
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!--<books-form (bookEmitter)='processBook($event)'></books-form>-->
+
+<section>
+  <table>
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Year</th>
+        <th>Author</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let bookz of books' [routerLink]="['/books', bookz._id]">
+        <td>{{ bookz.id }}</td>
+        <td>{{ bookz.title | titleize }}</td>
+        <td>{{ bookz.year }}</td>
+        <td>{{ bookz.author }}</td>
+        <td (click)='onEvent($event)'>
+          <button (click)='removeBook(book)'>Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+<!--<books-details [book]='selectedBook'></books-details>-->

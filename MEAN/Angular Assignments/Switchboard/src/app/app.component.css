@@ -1,0 +1,30 @@
+.container{
+  width: 550px;
+  height: 200px;
+  border: 2px solid black;
+  background-color: silver;
+}
+
+h1{
+  text-align: center;
+}
+
+h2{
+  text-align: center;
+}
+
+.buttons{
+  display: inline-block;
+}
+
+.button_on{
+  background-color: green;
+  color: white;
+  margin-left: 15px;
+}
+
+.button_off{
+  background-color: red;
+  color: white;
+  margin-left: 10px;
+}

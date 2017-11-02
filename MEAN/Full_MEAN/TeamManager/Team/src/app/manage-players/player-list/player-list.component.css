@@ -1,0 +1,34 @@
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+  table-layout: fixed;
+}
+
+td,
+th {
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+  text-align: left;
+}
+
+th {
+  background-color: #CCCCCC;
+}
+
+tr:nth-child(odd) {
+  background-color: #dddddd;
+}
+
+button {
+  border: 2px solid black;
+  box-shadow: 3px 3px 3px black;
+  margin-left: 5px;
+  width: 90%;
+  background-color: #CD2D2E;
+  color: white;
+  margin-bottom: 3px;
+  margin-top: 3px;
+}

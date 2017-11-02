@@ -1,0 +1,12 @@
+h1 {
+  text-align: center;
+}
+
+form {
+  margin-top: 20px;
+}
+
+.product_form {
+  border: 1px solid black;
+  padding: 10px;
+}

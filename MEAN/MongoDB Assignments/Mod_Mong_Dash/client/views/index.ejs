@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Index Page</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+  </head>
+  <body>
+    <div class="main">
+      <h1>Welcome to the Penguin Dashboard</h1>
+      <img src="/img/<%= rand %>.jpg">
+    </div>
+    <div class="penguins_home">
+      <h2>The Penguin Brigade</h2>
+      <h4>Click on a name to learn more information</h4>
+        <% for (var x in penguins) { %>
+          <h4><a href="/penguins/<%= penguins[x].id %>"><%= penguins[x].name %></a></h4>
+        <% } %>
+        <a href="/penguins/new">Add a new penguin to the Arctic</a>
+    </div>
+  </body>
+</html>

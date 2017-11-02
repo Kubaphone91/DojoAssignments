@@ -1,0 +1,19 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<div class='container'>
+  <h1>US Timezone Display</h1>
+  <div class='boxes'>
+    <button name="pst" (click)="change_time('pst')"
+    [ngClass]="{selected: current_zone === 'pst'}">PST</button>
+    <button name="mst" (click)="change_time('mst')"
+    [ngClass]="{selected: current_zone === 'mst'}">MST</button>
+    <button name="cst" (click)="change_time('cst')"
+    [ngClass]="{selected: current_zone === 'cst'}">CST</button>
+    <button name="est" (click)="change_time('est')"
+    [ngClass]="{selected: current_zone === 'est'}">EST</button>
+    <button name="clear" (click)="reset()">CLEAR</button>
+  </div>
+  <div class='times'>
+    <h1>{{ current_time | date: 'medium' }}</h1>
+  </div>
+</div>
+

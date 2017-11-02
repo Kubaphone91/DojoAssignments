@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Full Friends</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css')}}">
+  </head>
+  <body>
+      <h1>Full Friends List</h1>
+      <div class="email_list">
+        <table cellspacing="6">
+          <tr>
+            <td>First Name</td>
+            <td>Last Name</td>
+            <td>Email</td>
+            <td>Created At</td>
+            <td colspan="2">Actions</td>
+          </tr>
+          {% for user in users %}
+            <tr>
+              <td>{{ user['first_name'] }}</td>
+              <td>{{ user['last_name'] }}</td>
+              <td>{{ user['email'] }}</td>
+              <td>{{ user['created_at'] }}</td>
+              <td>
+                <a href="/friends/{{ user['id'] }}/edit">Edit</a>
+              </td>
+              <td>
+                <form method="post">
+                  <input type="hidden" name="delete" value="{{ user['id'] }}">
+                  <input formaction="/friends/{{ user['id'] }}/delete" type="submit" value="Delete">
+                </form>
+              </td>
+            </tr>
+          {% endfor %}
+        </table>
+      </div>
+      {% with messages = get_flashed_messages() %}
+        {% if messages %}
+          {% for message in messages %}
+            <p class="error">{{message}}</p>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+    <div class="addition">
+      <form action="/friends" method="POST">
+        First Name: <input type="text" name="first_name"><br>
+        Last Name: <input type="text" name="last_name"><br>
+        Email: <input type="text" name="email"><br>
+        <input type="hidden" name="value" value="submit">
+        <input type="submit" value="Add Friend">
+      </form>
+    </div>
+  </body>
+</html>

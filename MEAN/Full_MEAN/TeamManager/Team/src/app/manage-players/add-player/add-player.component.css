@@ -1,0 +1,42 @@
+.main {
+  border: 3px solid black;
+  width: 100%;
+  height: 100%;
+}
+
+h1 {
+  margin-left: 20px;
+}
+
+.formDiv {
+  margin: 20px;
+}
+
+label {
+  margin-bottom: 10px;
+  display: inline-block;
+  width: 200px;
+  text-align: right;
+}
+
+input {
+  margin-left: 5px;
+  width: 444px;
+}
+
+.button {
+  border: 2px solid black;
+  box-shadow: 3px 3px 3px black;
+  margin-left: 70%;
+  width: 30%;
+  background-color: #189C1F;
+  color: white;
+  margin-bottom: 3px;
+  margin-top: 3px;
+}
+
+span {
+  margin-left: 110px;
+  margin-bottom: 10px;
+  display: block;
+}

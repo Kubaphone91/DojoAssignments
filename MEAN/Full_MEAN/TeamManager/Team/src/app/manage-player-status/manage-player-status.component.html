@@ -1,0 +1,13 @@
+<div class="header">
+  <h1>Player Status - Game {{ selected }}</h1>
+  <nav>
+    <a (click)='setSelected(1)' [routerLink]="['/status', 'game', '1']">Game 1</a>
+    |
+    <a (click)='setSelected(2)' [routerLink]="['/status', 'game', '2']">Game 2</a>
+    |
+    <a (click)='setSelected(3)' [routerLink]="['/status', 'game', '3']">Game 3</a>
+  </nav>
+</div>
+<div class="component">
+  <router-outlet></router-outlet>
+</div>

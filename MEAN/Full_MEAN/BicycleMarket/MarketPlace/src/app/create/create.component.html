@@ -1,0 +1,35 @@
+<div class="addListing">
+  <h1>Create Listing</h1>
+  <div class="addForm">
+    <form (submit)="addListing(bikeForm, uploader)" #bikeForm='ngForm'>
+      <div class="image">
+        <div class="form-group">
+          <label for="single">Image Upload</label>
+          <input type="file" *ngIf="!bikeImage" class="form-control" name="single" ng2FileSelect [uploader]="uploader">
+          <div *ngFor="let item of uploader.queue">
+            <button *ngIf="item.progress == 0" type="button" class="button" (click)="item.upload(); upload(item)">Upload</button>
+            <span class="alert" *ngIf="item.progress != 100">You must upload an image</span>
+            <img *ngIf="item.progress == 100" src="{{savedFileName}}">
+          </div>
+        </div>
+      </div>
+      <div class="description">
+        <label for="title">Title: </label>
+        <input type="text" name="title" [(ngModel)]="bike.title" required #title='ngModel'>
+        <span class="alert" *ngIf="title.dirty && title.invalid">You must enter a title</span>
+        <label for="description">Description: </label>
+        <textarea name="description" cols="47" rows="6" [(ngModel)]="bike.description" required maxlength="200" #description='ngModel'></textarea>
+        <span class="alert" *ngIf="description.dirty && description.invalid">You must enter a description</span>
+      </div>
+      <div class="price">
+        <label for="price">Price: </label>
+        <input type="number" name="price" [(ngModel)]="bike.price" required min="1" #price='ngModel'>
+        <span class="alert" *ngIf="price.dirty && price.invalid">You must enter a price greater than 0</span>
+        <label for="location">Location: </label>
+        <input type="text" name="location" [(ngModel)]="bike.location" required #location='ngModel'>
+        <span class="alert" *ngIf="location.dirty && location.invalid">You must enter a location</span>
+        <input type="submit" class="button" value="Create" [disabled]='bikeForm.invalid'>
+      </div>
+    </form>
+  </div>
+</div>
