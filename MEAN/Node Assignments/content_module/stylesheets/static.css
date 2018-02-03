@@ -1,0 +1,12 @@
+* {
+  margin: 1% 2%;
+}
+
+img {
+  height: 300px;
+  width: 300px;
+}
+
+a {
+  display: inline-block;
+}

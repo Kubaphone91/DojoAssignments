@@ -8,7 +8,7 @@ function Deck(){
 Deck.prototype.assembleDeck = function(){
   for(let s = 0; s < this.suit.length; s++){
     for(let v = 0; v < this.value.length; v++){
-      this.deck.push(`${this.value[s]} of ${this.suit[s]}`);
+      this.deck.push(`${this.value[v]} of ${this.suit[s]}`);
     }
   }
   return this.shuffle();

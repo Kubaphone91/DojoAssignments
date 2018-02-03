@@ -28,11 +28,10 @@
         html_string += "<tr>";
         for(let j = 0; j < 13; j++){
           let nums = i * j;
-          if(i == 0 || j == 0){
-            for(let k = 0; k < 13; k++){
-              
+          if(i == 0 && j == 0){
+            nums = "X";
             }
-          }
+        
           let data = "<td>" + nums + "</td>";
           html_string += data;
         }
